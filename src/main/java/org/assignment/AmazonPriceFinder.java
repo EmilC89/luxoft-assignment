@@ -41,8 +41,10 @@ public class AmazonPriceFinder {
 
             // Find all price elements
             List<WebElement> priceElements = driver.findElements(By.cssSelector(".a-price-whole"));
+
             int minPrice = Integer.MAX_VALUE;
 
+            // Loop through all the price elements and find the lowest price
             for (WebElement priceElement : priceElements) {
                 String priceText = priceElement.getText().replaceAll("[^0-9]", "");
                 if (!priceText.isEmpty()) {
